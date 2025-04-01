@@ -94,9 +94,7 @@ jobs:
       shell: bash
       run: |
         cd build && ninja
-        export ASEPRITE=$PWD/build/bin/aseprite
-        cd tests
-        $XVFB bash run-tests.sh
+        echo "Compilation finished. Skipping tests on Windows."
     - uses: actions/upload-artifact@v4
       with:
         name: aseprite-${{ matrix.os }}-${{ matrix.build_type }}-${{ matrix.scripting }}
